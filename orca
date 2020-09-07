@@ -240,6 +240,11 @@ orca_cmd_shell() {
 
 orca_cmd_init() {
     echo "$ORCA_LXD_PRESEED" | lxd init --preseed
+    echo 'orca() { ~/orca/orca "$@"; }
+build() { orca build "$@"; }
+shell() { orca shell "$@"; }
+deploy() { orca deploy "$@"; }
+refresh() { orca refresh "$@"; }' >> ~/.bashrc
 }
 
 orca_cmd_base() {
